@@ -66,8 +66,9 @@ function HW2() {
   const [filter, setFilter] = useState<FilterType>("all");
 
   const filteredAffairs = filterAffairs(affairs, filter);
-  const deleteAffairCallback = (_id: any) => {
-    setAffairs(_id);
+  const deleteAffairCallback = (_id: number) => {
+    console.log("trigger");
+    setAffairs(affairs.filter((affair) => affair._id !== _id));
   };
 
   return (
